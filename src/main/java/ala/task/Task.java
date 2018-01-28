@@ -1,20 +1,35 @@
 package ala.task;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Task {
 
-    private final long id;
+	@Id 
+	@GeneratedValue
+    private long id;
     private final String reference;
 
-    public Task(long id, String reference) {
-        this.id = id;
+    protected Task() {
+    	this("default");
+    }
+    
+    public Task(String reference) {
         this.reference = reference;
     }
 
     public long getId() {
         return id;
     }
+    
 
     public String getReference() {
         return reference;
     }
+
+	protected void setId(long id) {
+		this.id = id;
+	}
 }
