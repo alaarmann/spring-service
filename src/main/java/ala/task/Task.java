@@ -1,4 +1,4 @@
-package task;
+package ala.task;
 
 public class Task {
 
