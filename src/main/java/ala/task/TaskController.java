@@ -42,7 +42,7 @@ public class TaskController {
 	  }
 	  taskRepository.save(task);
 	  HttpHeaders headers = new HttpHeaders();
-      headers.setLocation(builder.path("/article/{id}").buildAndExpand(task.getId()).toUri());
+      headers.setLocation(builder.path("/tasks/{id}").buildAndExpand(task.getId()).toUri());
 	  return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
   }
   
